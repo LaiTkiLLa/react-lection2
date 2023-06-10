@@ -1,3 +1,5 @@
+import {v4 as uuid} from 'uuid'
+
 export const ListView = ({items}) => {
     const BtnStyles = {
         color: 'red',
@@ -23,7 +25,7 @@ export const ListView = ({items}) => {
     return(
         <div >
             {items.map(item => (
-                <div style={styles}>
+                <div style={styles} key={uuid()}>
                     <img src={item.img} alt=""/>
                     <span className='item_span'>{item.name}</span>
                     <span className='item_span'>{item.color}</span>

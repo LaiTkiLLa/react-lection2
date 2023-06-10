@@ -1,3 +1,5 @@
+import {v4 as uuid} from 'uuid'
+
 export const CardsView = ({cards}) => {
     const btnStyle = {
         color: 'red',
@@ -35,7 +37,7 @@ export const CardsView = ({cards}) => {
     return (
         <div style={styles}>
             {cards.map(card => (
-                <div style={cardStyle}>
+                <div style={cardStyle} key={uuid()}>
                     <img src={card.img} alt=""/>
                     <span>{card.name}</span>
                     <span>{card.color}</span>
